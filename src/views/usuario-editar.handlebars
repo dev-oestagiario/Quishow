@@ -1,0 +1,11 @@
+<h2>Editar Usuário</h2>
+<form method="post" action="/admin/usuarios/{{user.id}}/editar">
+  <input type="text" name="nome" value="{{user.nome}}" placeholder="Nome" required>
+  <input type="email" name="email" value="{{user.email}}" placeholder="E-mail" required>
+  <select name="perfil">
+    <option value="aluno" {{#if (eq user.perfil 'aluno')}}selected{{/if}}>Aluno</option>
+    <option value="professor" {{#if (eq user.perfil 'professor')}}selected{{/if}}>Professor</option>
+  </select>
+  <button type="submit">Salvar</button>
+</form>
+<a href="/admin/usuarios">Voltar</a>

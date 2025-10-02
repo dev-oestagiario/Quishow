@@ -1,0 +1,21 @@
+<main style="max-width:420px;margin:3em auto;padding:2em 1em;background:#fff;border-radius:16px;box-shadow:0 2px 16px #0001;">
+  <h2 style="text-align:center;color:#2563eb;">Criar conta grátis</h2>
+  <form method="post" action="/cadastro" style="display:flex;flex-direction:column;gap:1em;">
+    <input type="text" name="nome" placeholder="Nome" required style="padding:1em;font-size:1.1em;">
+    <input type="email" name="email" placeholder="E-mail" required style="padding:1em;font-size:1.1em;">
+    <input type="password" name="senha" placeholder="Senha" required style="padding:1em;font-size:1.1em;">
+    <div style="display:flex;gap:1em;justify-content:center;align-items:center;">
+      <label style="display:flex;align-items:center;gap:0.3em;">
+        <input type="radio" name="perfil" value="aluno" checked> Aluno
+      </label>
+      <label style="display:flex;align-items:center;gap:0.3em;">
+        <input type="radio" name="perfil" value="professor"> Professor
+      </label>
+    </div>
+    <small style="color:#64748b;text-align:center;">Com perfil de Professor você pode publicar experimentos.</small>
+    <button type="submit" class="cta">Criar conta grátis</button>
+  </form>
+  <div style="text-align:center;margin-top:1em;">
+    <a href="/login" class="cta-secondary">Já tem conta? Entrar</a>
+  </div>
+</main>

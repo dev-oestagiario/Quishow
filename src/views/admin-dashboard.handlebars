@@ -1,0 +1,39 @@
+<h2>Dashboard Admin</h2>
+<p><strong>Total de usuários:</strong> {{totalUsuarios}}</p>
+<p><strong>Total de experimentos aprovados:</strong> {{totalExperimentos}}</p>
+
+<h3>Usuários</h3>
+<table border="1" cellpadding="6">
+  <thead>
+    <tr><th>ID</th><th>Nome</th><th>Email</th><th>Perfil</th></tr>
+  </thead>
+  <tbody>
+    {{#each usuarios}}
+    <tr>
+      <td>{{id}}</td>
+      <td>{{nome}}</td>
+      <td>{{email}}</td>
+      <td>{{perfil}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<h3>Experimentos</h3>
+<table border="1" cellpadding="6">
+  <thead>
+    <tr><th>ID</th><th>Título</th><th>Nível</th><th>Tema</th></tr>
+  </thead>
+  <tbody>
+    {{#each experimentos}}
+    <tr>
+      <td>{{id}}</td>
+      <td>{{titulo}}</td>
+      <td>{{nivel}}</td>
+      <td>{{tema}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<a href="/experimentos/novo" class="cta">Cadastrar novo experimento</a>

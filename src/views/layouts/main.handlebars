@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{#if title}}{{title}} — {{/if}}QuiShow</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <div class="layout-principal">
+    {{#if user}}
+      <header class="header-fixo">
+        <div class="header-content">
+          <a href="/" class="logo" style="display:flex;align-items:center;gap:0.5em;font-weight:700;font-size:1.3em;color:#2563eb;text-decoration:none;">
+            <img src="/images/logo.svg" alt="QuiShow" style="height:36px;width:36px;object-fit:contain;"> QuiShow
+          </a>
+          <form class="busca-header" action="/buscar" method="get" style="flex:1;max-width:340px;margin:0 1em;">
+            <input type="text" name="q" placeholder="Buscar experimentos, conteúdos..." style="width:100%;padding:0.5em 1em;border-radius:8px;border:1px solid #e5e7eb;">
+          </form>
+          <div class="header-actions" style="display:flex;align-items:center;gap:1em;">
+            <a href="/notificacoes" title="Notificações" style="font-size:1.5em;color:#2563eb;">🔔</a>
+            <a href="/perfil" title="Perfil" style="display:flex;align-items:center;gap:0.5em;text-decoration:none;">
+              <img src="/images/avatar-default.png" alt="Avatar" style="height:32px;width:32px;border-radius:50%;border:2px solid #2563eb;"> <span style="color:#2563eb;font-weight:600;">Você</span>
+            </a>
+          </div>
+        </div>
+      </header>
+      {{> sidebar}}
+    {{/if}}
+    <main class="main-conteudo">
+      {{{body}}}
+    </main>
+    {{#if user}}
+      {{> bottomnav}}
+      <a href="/experimentos/novo" class="cta cta-flutuante-novo" title="Novo Experimento Favorito">+ Novo Experimento Favorito</a>
+    {{/if}}
+  </div>
+</body>
+</html>

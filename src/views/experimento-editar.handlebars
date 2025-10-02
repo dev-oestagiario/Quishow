@@ -1,0 +1,21 @@
+<main style="max-width:500px;margin:2em auto;padding:2em 1em;background:#fff;border-radius:16px;box-shadow:0 2px 16px #0001;">
+  <h2 style="color:#2563eb;text-align:center;">Editar Experimento</h2>
+  <form method="post" action="/admin/experimentos/{{exp.id}}/editar" style="display:flex;flex-direction:column;gap:1em;">
+    <input type="text" name="titulo" placeholder="Título" value="{{exp.titulo}}" required>
+    <textarea name="resumo" placeholder="Resumo" required>{{exp.resumo}}</textarea>
+    <input type="text" name="imagem" placeholder="URL da imagem" value="{{exp.imagem}}">
+    <select name="nivel" required>
+      <option value="iniciante" {{#if (eq exp.nivel 'iniciante')}}selected{{/if}}>Iniciante</option>
+      <option value="intermediario" {{#if (eq exp.nivel 'intermediario')}}selected{{/if}}>Intermediário</option>
+      <option value="avancado" {{#if (eq exp.nivel 'avancado')}}selected{{/if}}>Avançado</option>
+    </select>
+    <input type="text" name="tema" placeholder="Tema" value="{{exp.tema}}">
+    <textarea name="materiais" placeholder="Materiais">{{exp.materiais}}</textarea>
+    <textarea name="passos" placeholder="Passo a passo">{{exp.passos}}</textarea>
+    <input type="text" name="video" placeholder="URL do vídeo" value="{{exp.video}}">
+    <button type="submit" class="cta">Salvar alterações</button>
+  </form>
+  <div style="text-align:center;margin-top:1em;">
+    <a href="/admin/experimentos" class="cta-secondary">Voltar</a>
+  </div>
+</main>
