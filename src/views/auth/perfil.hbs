@@ -1,4 +1,4 @@
-<div class="container py-5">
+<div class="container mt-5 py-5">
   <div class="d-flex justify-content-center">
     <div class="card shadow-sm w-100" style="max-width: 720px;">
       <div class="card-body">
@@ -20,7 +20,7 @@
         {{/if}}
 
         <!-- Formulário de atualização -->
-        <form action="/perfil" method="POST" class="row g-3">
+        <form action="/auth/perfil" method="POST" class="row g-3">
           <div class="col-12">
             <label for="nome" class="form-label">Nome</label>
             <input type="text" id="nome" name="nome" class="form-control" value="{{user.name}}" required>

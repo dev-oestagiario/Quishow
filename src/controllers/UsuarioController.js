@@ -135,7 +135,7 @@ class UsuarioController {
       const userId = req.session.user.id;
       const nome = req.body.nome || req.body.name;
       const email = req.body.email;
-      const redirect = "/perfil";
+      const redirect = "/auth/perfil";
 
       if (!nome || !email) {
         req.flash("error_msg", "Nome e email são obrigatórios");
