@@ -17,6 +17,7 @@
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "express-handlebars": "^8.0.3",
+    "express-mysql-session": "^3.0.3",
     "express-session": "^1.18.2",
     "method-override": "^3.0.0",
     "multer": "^2.0.2",

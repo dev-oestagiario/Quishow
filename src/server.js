@@ -5,7 +5,6 @@ const handlebars = require("express-handlebars");
 require("dotenv").config();
 const session = require("express-session");
 const flash = require("connect-flash");
-const methodOverride = require("method-override"); // 👈 1. IMPORTAR
 
 const PORT = process.env.PORT || 3000;
 const routes = require("./routes/router");
@@ -31,9 +30,10 @@ server.use(
   session({
     secret: process.env.SESSION_SECRET || "papito123dnoeinda",
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
+    name: "sessionId",
     cookie: {
-      secure: process.env.NODE_ENV === "production",
+      secure: false,
       maxAge: 2 * 60 * 60 * 1000,
     },
   })
